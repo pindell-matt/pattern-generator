@@ -4,22 +4,37 @@ class PatternGenerator
   attr_reader :pattern
 
   def initialize(pattern)
-    @pattern = pattern
+    @pattern = pattern.upcase
+    @output = []
+    @num_count = 0
   end
 
   def chars_gen
-    ('A'..'Z').to_a.sample
+    alphabet = ('A'..'Z').to_a.join
+    alphabet.delete!('IO')
+    alphabet.chars.sample
   end
 
   def num_gen
-    (0..9).to_a.sample
+    (2..9).to_a.sample
   end
 
-  def join_chars_and_nums
-    "#{chars_gen}#{num_gen}"
+  def generator
+    p_length = 0
+    until p_length == @pattern.length
+      if @pattern[p_length] == 'X'
+        @output << chars_gen
+      else
+        @num_count += 1
+        @output << num_gen
+      end
+      p_length += 1
+    end
+    @output.join('')
   end
+
 
 end
 
-p = PatternGenerator.new("xnxxn")
-puts p.join_chars_and_nums
+p = PatternGenerator.new("xxxxxn")
+puts p.generator
