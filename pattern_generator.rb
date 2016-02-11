@@ -4,8 +4,8 @@ class PatternGenerator
   attr_reader :pattern, :num_count
 
   def initialize(pattern)
-    @pattern = pattern.upcase
-    @output = []
+    @pattern   = pattern.upcase
+    @output    = []
     @num_count = 0
   end
 
@@ -33,6 +33,8 @@ class PatternGenerator
 
 end
 
-p = PatternGenerator.new("xxxxxnn")
+if __FILE__ == $0
+p = PatternGenerator.new("xnxxn")
 puts p.generator
 puts p.num_count
+end
