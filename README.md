@@ -9,7 +9,7 @@ where `X` stands for an uppercase letter `A` through `Z` and `N` stands for a di
 
 The generate method is then used to generate a pattern, based on the submitted template:
 
-```
+```ruby
 pattern = PatternGenerator.new('xnxxn')
 pattern.generate
 # => P3QJ8
@@ -22,7 +22,7 @@ increase general pattern readability.
 
 Once a pattern has been generated, it's possible to see a total count of all `N` elements that the user submitted, by checking the `num_count`.
 
-```
+```ruby
 pattern.num_count
 # => 2
 ```
