@@ -1,7 +1,7 @@
 require 'pry'
 
 class PatternGenerator
-  attr_reader :pattern
+  attr_reader :pattern, :num_count
 
   def initialize(pattern)
     @pattern = pattern.upcase
@@ -33,8 +33,8 @@ class PatternGenerator
     @output.join('')
   end
 
-
 end
 
-p = PatternGenerator.new("xxxxxn")
+p = PatternGenerator.new("xxxxxnn")
 puts p.generator
+puts p.num_count
