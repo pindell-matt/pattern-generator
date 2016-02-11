@@ -10,9 +10,7 @@ class PatternGenerator
   end
 
   def chars_gen
-    alphabet = ('A'..'Z').to_a.join
-    alphabet.delete!('IO')
-    alphabet.chars.sample
+    ('A'..'Z').to_a.keep_if { |char| char != 'I' || 'O' }.sample
   end
 
   def num_gen
