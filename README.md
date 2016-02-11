@@ -13,6 +13,10 @@ The generate method is then used to generate a pattern, based on the submitted t
 pattern = PatternGenerator.new('xnxxn')
 pattern.generate
 # => P3QJ8
+
+longer_pattern = PatternGenerator.new('xnxxnxxxn')
+longer_pattern.generate
+# => H7US8ZTT7
 ```
 
 Numbers `1` and `0` and letters `I` and `O` have been excluded to reduce character-number confusion and

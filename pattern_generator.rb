@@ -34,7 +34,7 @@ class PatternGenerator
 end
 
 if __FILE__ == $0
-p = PatternGenerator.new("xnxxn")
+p = PatternGenerator.new("xnxxnxxxn")
 puts p.generator
 puts p.num_count
 end
